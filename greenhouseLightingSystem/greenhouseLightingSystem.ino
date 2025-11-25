@@ -13,9 +13,10 @@ void setup() {
 }
 void loop() {
   int lightLevel = analogRead(sensorPin); //measure light level
-  if (lightLevel < 400) {
+  if (lightLevel < 20) {
     digitalWrite(ledControlPin, HIGH); //turns LEDs on
   } else {
     digitalWrite(ledControlPin, LOW); //turns LEDs off
+
   }
 }
