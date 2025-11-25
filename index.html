@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grenhouse Light System</title>
+
+  <!-- Prism.js syntax highlighting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-c.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-cpp.min.js"></script>
+
+  <!-- Includes the stylesheet file styles.css -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Fixed Navigation Menu -->
+  <nav id="menu">
+    <h3>Menu</h3>
+    <ul>
+      <li><a href="#top">Title</a></li>
+      <li><a href="#information">Project Information</a></li>
+      <li><a href="#introduction">Introduction</a></li>
+      <li><a href="#circuit-diagram">Circuit</a></li>
+      <li><a href="#environment">Environment</a></li>
+      <li><a href="#bom">BoM</a></li>
+      <li><a href="#prototype">Prototype</a></li>
+      <li><a href="#code">Code</a></li>
+      <li><a href="#conclusion">Conclusion</a></li>
+      <li><a href="#references">References</a></li>
+    </ul>
+  </nav>
+
+
+  <h1 id="top">Greenhouse Light System</h1>
+
+  <section id="information">
+    <h2>Project Information</h2>
+    <p><strong>Course:</strong> TECH 117 (Computer Engineering Technology, Fall 2025)</p>
+    <p><strong>Instructor:</strong> Ph.D. Ana Rodrigues</p>
+    <p><strong>Team Members:</strong></p>
+    <ul>
+      <li>Patrick Kiernicki</li>
+      <li>Filip Szymczak</li>
+      <li>Halit Cemil Uzun</li>
+    </ul>
+  </section>
+
+  <section id="introduction">
+    <h2>Introduction</h2>
+    <p>This project uses an <strong>Arduino Uno</strong>, a <strong>GL5528 Photoresistor (LDR)</strong>, and <strong>white LEDs</strong> to provide extra light to plants in dark environments.
+    </p>
+  </section>
+
+  <section id="circuit-diagram">
+    <h2>Circuit Diagram</h2>
+    <p>The photoresistor measures light levels; the Arduino activates LEDs to provide necessary light. </p>
+    <img src="greenhouse-lighting-system-Arduino.jpg" alt="Greenhouse lighting system">
+  </section>
+
+  <section id="environment">
+    <h2>Environmental Impact Assessment</h2>
+    <ul>
+      <li><strong>Materials:</strong> The Arduino Uno is RoHS and WEEE compliant, limiting hazardous substances.
+      </li>
+      <li><strong>Energy Efficiency:</strong> The circuit draws ~200 mA, so plugging in through USB is fine, however a transistor is required to not harm the Arduino.</li>
+      <li><strong>Reusability:</strong> All components are modular and reusable, reducing electronic waste.</li>
+      <li><strong>Packaging & Shipping:</strong> Ordering all components from a single supplier helps minimize
+        carbon footprint.</li>
+    </ul>
+  </section>
+
+  <section id="bom">
+    <h2>Bill of Materials (BoM)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Qty</th>
+          <th>Unit Price (CAD)</th>
+          <th>Subtotal (CAD)</th>
+          <th>Source</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Arduino Uno Rev3</td>
+          <td>1</td>
+          <td>$27.60</td>
+          <td>$27.60</td>
+          <td><a href="https://store-usa.arduino.cc/products/arduino-uno-rev3">Arduino Store</a></td>
+        </tr>
+        <tr>
+          <td>GL5528 Phtotoresistor</td>
+          <td>1</td>
+          <td>$3.42</td>
+          <td>$3.42</td>
+          <td><a href="https://www.aliexpress.com/item/1005007822412621.html?src=bing&aff_short_key=UneMJZVf&aff_platform=true&isdl=y&albch=shopping&acnt=135095331&isdl=y&albcp=555335595&albag=1300723456863589&slnk&trgt=pla-2333094955015370&plac&crea=81295275168293&netw=s&device=c&mtctp=e&utm_source=Bing&utm_medium=shopping&utm_campaign=PA_Bing_CA_PMAX_Electronics_MaxValue_20250305_newstore&utm_content=ALL&utm_term=GL5528%20Phtotoresistor">AliExpress</a></td>
+        </tr>
+        <tr>
+          <td>LED (white)</td>
+          <td>1 set</td>
+          <td>$4.41</td>
+          <td>$4.41</td>
+          <td><a href= "https://www.aliexpress.com/item/1005006099300683.html?src=bing&aff_short_key=UneMJZVf&aff_platform=true&isdl=y">AliExpress</a></td>
+        </tr>
+        <tr>
+          <td>330 Ω Resistors</td>
+          <td>1 set</td>
+          <td>$1.65</td>
+          <td>$1.65</td>
+          <td><a href = "https://www.aliexpress.com/item/32315881534.html?src=bing&aff_short_key=UneMJZVf&aff_platform=true&isdl=y&albch=shopping&acnt=135095331&isdl=y&albcp=555335595&albag=1300723456863589&slnk&trgt=pla-2333094955015370&plac&crea=81295275168293&netw=s&device=c&mtctp=e&utm_source=Bing&utm_medium=shopping&utm_campaign=PA_Bing_CA_PMAX_Electronics_MaxValue_20250305_newstore&utm_content=ALL&utm_term=330%20ohm%20resistor">AliExpress</a></td>
+        </tr>
+        <tr>
+          <td>1k Ω Resistors</td>
+          <td>1 set</td>
+          <td>$0.23</td>
+          <td>$0.23</td>
+          <td><a href = "https://www.aliexpress.com/item/4000512466403.html?src=bing&aff_short_key=UneMJZVf&aff_platform=true&isdl=y">AliExpress</a></td>
+        </tr>
+        <tr>
+        <tr>
+        <td>2N2222 Transistor</td>
+        <td>1 set</td>
+        <td>$0.97</td>
+        <td>$0.97</td>
+        <td><a href = "https://www.aliexpress.com/item/1005002840840376.html?src=bing&aff_short_key=UneMJZVf&aff_platform=true&isdl=y&albch=shopping&acnt=135095331&isdl=y&albcp=555335595&albag=1300723456863589&slnk&trgt=pla-2333094955015370&plac&crea=81295275168293&netw=s&device=c&mtctp=e&utm_source=Bing&utm_medium=shopping&utm_campaign=PA_Bing_CA_PMAX_Electronics_MaxValue_20250305_newstore&utm_content=ALL&utm_term=2N2222%20transistor">AliExpress</a></td>
+        </tr>
+        <tr>
+          <td>Breadboard</td>
+          <td>1</td>
+          <td>$4.95</td>
+          <td>$4.95</td>
+          <td><a href="https://www.adafruit.com/product/64">Adafruit</a></td>
+        </tr>
+        <tr>
+          <td>Jumper Wires</td>
+          <td>1 set</td>
+          <td>$3.50</td>
+          <td>$3.50</td>
+          <td><a href="https://www.sparkfun.com/jumper-wires-standard-7-m-m-30-awg-30-pack.html">SparkFun</a></td>
+        </tr>
+        <tr>
+          <td>Potted Plant</td>
+          <td>1</td>
+          <td>$4.99</td>
+          <td>$4.99</td>
+          <td><a href="https://www.ikea.com/ca/en/p/succulent-plant-with-pot-assorted-species-plants-succulent-00483324/">Ikea</a></td>
+        </tr>
+        <tr>
+          <td>Fish Tank</td>
+          <td>1 set</td>
+          <td>$8.49</td>
+          <td>$8.49</td>
+          <td><a href="https://www.amazon.ca/Marina-13466-1-25L-Betta-Aquarium/dp/B00OXTRDL8?crid=QV9ELK9NHJCK&dib=eyJ2IjoiMSJ9.FlAazC2YLhifkKxNrMYGecxPmWz4vqF1gx7_7y-5LY9rg9LRAP0jKWDeS3-hsTwqSu-kaxtzuwHeN_48ic362bmOV6LdAwoCk6kL6R_oFUOMzexAa4H6FmjzPDM812q2ljisPVZRC0cWYe0pAH-_d8PMGvqlLqtJ8T-1BySkZDvhPHQzYwLLK0PEVj7yiYg5UBi_xEDQMR3-ZSGD4ubk2h2TEBCFihu3GwtWxFzWXPQC2bTZgK1tITqdxmGDBcyLnYkm7BbRScdK1kU9VvmwgkK6S25yAusUq63YVVy5l_s.4MbLYRHo0JKmFb4Y0aYWs3jVeUnLQ7jyMyOAevZm3q0&dib_tag=se&keywords=1+gallon+fish+tank&qid=1763501901&sprefix=1+gallon+fish+tan%2Caps%2C113&sr=8-5">Amazon</a>
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3">Estimated Total</td>
+          <td>$60.21</td>
+          <td>—</td>
+        </tr>
+      </tfoot>
+    </table>
+  </section>
+<!--
+  <section id="prototype">
+    <h2>Prototype</h2>
+    <p>The following image shows the assembled prototype on a breadboard.</p>
+    <img src="prototype.jpg" alt="Greenhouse lighting system prototype">
+  </section>
+-->
+  <section id="code">
+    <h2>Arduino Code</h2>
+    <p>The following Arduino code controls the system, lighting LEDs based on the readings from the photoresistor.</p>
+
+    <pre class="line-numbers">
+  <button class="copy-btn" onclick="copyCode()">Copy</button>
+  <code id="arduinoCode" class="language-cpp">
+//Lighting system with Photoresistor (LDR)
+//Author: Patrick Kiernicki
+//Nov 18, 2025
+//If the LDR detects the light level to be under a certain value (400), it will turn the LEDs on.
+
+//LDR pin
+int sensorPin = A0;
+//LEDs pin
+int ledControlPin = 9;
+
+void setup() {
+  pinMode(ledControlPin, OUTPUT);
+}
+void loop() {
+  int lightLevel = analogRead(sensorPin); //measure light level
+  if (lightLevel < 400) {
+    digitalWrite(ledControlPin, HIGH); //turns LEDs on
+  } else {
+    digitalWrite(ledControlPin, LOW); //turns LEDs off
+  }
+}
+    </code></pre>
+
+    <script>
+      function copyCode() {
+        const code = document.getElementById('arduinoCode').innerText;
+        navigator.clipboard.writeText(code).then(() => {
+          alert('Code copied to clipboard!');
+        });
+      }
+    </script>
+  </section>
+
+
+
+  <section id="conclusion">
+    <h2>Conclusion</h2>
+    <p>The system effectively demonstrates turning on multiple LEDs in low light conditions using Arduino. It's affordable, educational, and
+      sustainable through reusable components.</p>
+  </section>
+
+ <section id="references">
+  <h2>References</h2>
+  <p>
+    The following external resources and example projects demonstrate related Arduino applications:
+  </p>
+
+  <ul>
+    <li>
+      Arduino Project Hub. (n.d.). 
+      <em>Greenhouse.</em> 
+      Sgarro, christian26
+      <a href="https://projecthub.arduino.cc/Sgarro/greenhouse-f6fc53" target="_blank" rel="noopener noreferrer">
+        https://projecthub.arduino.cc/Sgarro/greenhouse-f6fc53
+      </a>
+    </li>
+
+    <li>
+      Arduino Project Hub. (n.d.). 
+      <em>Ambient Light Sensor Using Photo Resistor and LED Lights!</em> 
+      DCamino
+      <a href="https://projecthub.arduino.cc/DCamino/ambient-light-sensor-using-photo-resistor-and-led-lights-79c2ed" target="_blank" rel="noopener noreferrer">
+        https://projecthub.arduino.cc/DCamino/ambient-light-sensor-using-photo-resistor-and-led-lights-79c2ed
+      </a>
+    </li>
+  </ul>
+</section>
+
+
+
+</body>
+
+</html>
