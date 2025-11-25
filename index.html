@@ -196,8 +196,8 @@ void setup() {
   pinMode(ledControlPin, OUTPUT);
 }
 void loop() {
-  int lightLevel = analogRead(sensorPin); //measure light level
-  if (lightLevel < 400) {
+  int lightLevel = analogRead(sensorPin); //measures light level
+  if (lightLevel < 20) {
     digitalWrite(ledControlPin, HIGH); //turns LEDs on
   } else {
     digitalWrite(ledControlPin, LOW); //turns LEDs off
