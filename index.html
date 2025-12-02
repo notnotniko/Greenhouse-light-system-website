@@ -51,7 +51,7 @@
 
   <section id="introduction">
     <h2>Introduction</h2>
-    <p>This project uses an <strong>Arduino Uno</strong>, a <strong>GL5528 Photoresistor (LDR)</strong>, 10 <strong>white LEDs</strong> to provide extra light to plants in dark environments and a <strong>2N2222 transistor</strong> to not damage the arduino.
+    <p>This project uses an <strong>Arduino Uno</strong>, a <strong>GL5528 Photoresistor (LDR)</strong> to get light level readings, and send them to the arduino, 10 <strong>white LEDs</strong> to provide extra light to plants in dark environments, and a <strong>2N2222 transistor</strong> to not damage the arduino.
     </p>
   </section>
 
@@ -64,12 +64,11 @@
   <section id="environment">
     <h2>Environmental Impact Assessment</h2>
     <ul>
-      <li><strong>Materials:</strong> The Arduino Uno is RoHS and WEEE compliant, limiting hazardous substances.
+      <li><strong>Materials:</strong> The Arduino Uno is RoHS and WEEE compliant, limiting hazardous substances. The fishtank used to hold everything is made out of acrylic, which is recyclable, though only in specialized facilities. Acrylic is insulative, which is important for greenhouses to keep the inside of it warm, however a possibly better alternative would be to use a recylcable foam.
       </li>
-      <li><strong>Energy Efficiency:</strong> The circuit draws ~200 mA, so plugging in through USB is fine, however a transistor is required to not harm the Arduino.</li>
-      <li><strong>Reusability:</strong> All components are modular and reusable, reducing electronic waste.</li>
-      <li><strong>Packaging & Shipping:</strong> Ordering all components from a single supplier helps minimize
-        carbon footprint.</li>
+      <li><strong>Energy Efficiency:</strong> The circuit draws ~200 mA, so plugging in through USB is fine, however a transistor is required to not harm the Arduino. In this case we used a 2N2222 transistor, as it is very commonly used for low-power amplifying.</li>
+      <li><strong>Reusability:</strong> All components are modular and reusable, reducing electronic waste. This project can easily be disassembled, and the parts used for other projects.</li>
+      <li><strong>Packaging & Shipping:</strong> Ordering all components from a single supplier helps minimize carbon footprint. This is because instead of needing to have multiple different packages or methods of transportation, it all arrives at once, usually in one big box, minimizing waste and emissions.</li>
     </ul>
   </section>
 
@@ -177,7 +176,7 @@
 
   <section id="code">
     <h2>Arduino Code</h2>
-    <p>The following Arduino code controls the system, lighting LEDs based on the readings from the photoresistor.</p>
+    <p>The following Arduino code controls the system, lighting LEDs based on the readings from the photoresistor. If the LDR detects the readings to be above a certain value, this means there is enough light for the plant, if the read value is below this value, there is not enough light for the plant and the LEDs are turned on to account for this.</p>
 
     <pre class="line-numbers">
   <button class="copy-btn" onclick="copyCode()">Copy</button>
@@ -219,14 +218,13 @@ void loop() {
 
   <section id="conclusion">
     <h2>Conclusion</h2>
-    <p>The system effectively demonstrates turning on multiple LEDs in low light conditions using Arduino. It's affordable, educational, and
-      sustainable through reusable components.</p>
+    <p>The system effectively demonstrates turning on multiple LEDs in low light conditions using Arduino. In certain areas, there isn't enough light for plants to photosynthesize, this project attempts to combat this by providing more artificial light when there isn't enough natural light. Plants are a very important part of our lives, acting as a source of oxygen which we and all animals need to breathe, as well as a source of food for us and other species.</p>
   </section>
 
  <section id="references">
   <h2>References</h2>
   <p>
-    The following external resources and example projects demonstrate related Arduino applications:
+    The following external resources and example projects demonstrate related Arduino applications, as well as providing insight for portions of the project:
   </p>
 
   <ul>
@@ -247,7 +245,23 @@ void loop() {
         https://projecthub.arduino.cc/DCamino/ambient-light-sensor-using-photo-resistor-and-led-lights-79c2ed
       </a>
     </li>
-  </ul>
+ 
+  <li>
+      Wikipedia
+      <em>2N2222.</em> 
+      <a href="https://en.wikipedia.org/wiki/2N2222" target="_blank" rel="noopener noreferrer">
+        https://en.wikipedia.org/wiki/2N2222
+      </a>
+    </li>
+    <li>
+      The Important Site
+      <em>10 Reasons Why Plants Are Important.</em> 
+      Emmaline Soken-Huberty
+      <a href="https://theimportantsite.com/10-reasons-why-plants-are-important/" target="_blank" rel="noopener noreferrer">
+        https://theimportantsite.com/10-reasons-why-plants-are-important/
+      </a>
+    </li>
+     </ul>
 </section>
 
 
