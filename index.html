@@ -168,13 +168,13 @@
       </tfoot>
     </table>
   </section>
-<!--
+
   <section id="prototype">
     <h2>Prototype</h2>
     <p>The following image shows the assembled prototype on a breadboard.</p>
     <img src="prototype.jpg" alt="Greenhouse lighting system prototype">
   </section>
--->
+
   <section id="code">
     <h2>Arduino Code</h2>
     <p>The following Arduino code controls the system, lighting LEDs based on the readings from the photoresistor.</p>
@@ -185,7 +185,7 @@
 //Lighting system with Photoresistor (LDR)
 //Author: Patrick Kiernicki
 //Nov 18, 2025
-//If the LDR detects the light level to be under a certain value (400), it will turn the LEDs on.
+//If the LDR detects the light level to be under a certain value, it will turn the LEDs on.
 
 //LDR pin
 int sensorPin = A0;
@@ -197,7 +197,7 @@ void setup() {
 }
 void loop() {
   int lightLevel = analogRead(sensorPin); //measures light level
-  if (lightLevel < 20) {
+  if (lightLevel < 6) {
     digitalWrite(ledControlPin, HIGH); //turns LEDs on
   } else {
     digitalWrite(ledControlPin, LOW); //turns LEDs off
