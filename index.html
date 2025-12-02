@@ -51,7 +51,7 @@
 
   <section id="introduction">
     <h2>Introduction</h2>
-    <p>This project uses an <strong>Arduino Uno</strong>, a <strong>GL5528 Photoresistor (LDR)</strong>, and <strong>white LEDs</strong> to provide extra light to plants in dark environments.
+    <p>This project uses an <strong>Arduino Uno</strong>, a <strong>GL5528 Photoresistor (LDR)</strong>, 10 <strong>white LEDs</strong> to provide extra light to plants in dark environments and a <strong>2N2222 transistor</strong> to not damage the arduino.
     </p>
   </section>
 
@@ -185,7 +185,7 @@
 //Lighting system with Photoresistor (LDR)
 //Author: Patrick Kiernicki
 //Nov 18, 2025
-//If the LDR detects the light level to be under a certain value, it will turn the LEDs on.
+//If the LDR detects the light level to be above a certain value, it will turn the LEDs off.
 
 //LDR pin
 int sensorPin = A0;
@@ -198,9 +198,9 @@ void setup() {
 void loop() {
   int lightLevel = analogRead(sensorPin); //measures light level
   if (lightLevel < 6) {
-    digitalWrite(ledControlPin, HIGH); //turns LEDs on
-  } else {
     digitalWrite(ledControlPin, LOW); //turns LEDs off
+  } else {
+    digitalWrite(ledControlPin, HIGH); //turns LEDs on
   }
 }
     </code></pre>
